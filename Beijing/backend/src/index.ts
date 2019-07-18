@@ -1,7 +1,7 @@
-const express = require('express')
-const cors = require('cors')
+import express from 'express'
+import cors from 'cors'
 
-const postsRouter = require('./routes/posts')
+import postsRouter from './routes/posts'
 
 const app = express()
 
@@ -28,7 +28,7 @@ app.use(
 
 // Routes
 app.get('/', (req, res) => {
-  res.send('Index page')
+  res.send('Index page with TypeScript')
 })
 
 app.use('/posts', postsRouter)
