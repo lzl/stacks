@@ -4,7 +4,7 @@ import dotenv from 'dotenv'
 import 'reflect-metadata'
 import { createConnection } from 'typeorm'
 
-import postsRouter from './routes/posts'
+import postsRouter from './routes/post'
 
 dotenv.config()
 
@@ -38,7 +38,7 @@ createConnection()
       res.send('Index page with TypeScript')
     })
 
-    app.use('/posts', postsRouter)
+    app.use('/post', postsRouter)
 
     app.listen(3000, () => console.log('Server is running.'))
   })
