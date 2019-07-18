@@ -1,19 +1,9 @@
 import express, { Request, Response } from 'express'
+import { getAll, save } from '../controller/post'
 
 const router = express.Router()
 
-interface Posts {
-  title: string
-  content: string
-}
-
-const posts: Posts[] = [
-  { title: 'Post 1', content: 'Content 1' },
-  { title: 'Post 2', content: 'Content 2' },
-]
-
-router.get('/', (req: Request, res: Response) => {
-  res.json(posts)
-})
+router.get('/', getAll)
+router.post('/', save)
 
 export default router
