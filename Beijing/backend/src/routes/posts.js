@@ -1,14 +1,14 @@
-const express = require("express");
+const express = require('express')
 
-const router = express.Router();
+const router = express.Router()
 
 const posts = [
-  { title: "Post 1", content: "Content 1" },
-  { title: "Post 2", content: "Content 2" }
-];
+  { title: 'Post 1', content: 'Content 1' },
+  { title: 'Post 2', content: 'Content 2' },
+]
 
-router.get("/", (req, res) => {
-  res.json(posts);
-});
+router.get('/', (req, res) => {
+  res.json(posts)
+})
 
-module.exports = router;
+module.exports = router
