@@ -1,4 +1,4 @@
-import express from 'express'
+import express, { Request, Response } from 'express'
 import cors from 'cors'
 
 import postsRouter from './routes/posts'
@@ -27,7 +27,7 @@ app.use(
 )
 
 // Routes
-app.get('/', (req, res) => {
+app.get('/', (req: Request, res: Response) => {
   res.send('Index page with TypeScript')
 })
 

@@ -1,13 +1,18 @@
-import express from 'express'
+import express, { Request, Response } from 'express'
 
 const router = express.Router()
 
-const posts = [
+interface Posts {
+  title: string
+  content: string
+}
+
+const posts: Posts[] = [
   { title: 'Post 1', content: 'Content 1' },
   { title: 'Post 2', content: 'Content 2' },
 ]
 
-router.get('/', (req, res) => {
+router.get('/', (req: Request, res: Response) => {
   res.json(posts)
 })
 
