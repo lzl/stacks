@@ -6,5 +6,5 @@ import startServer from './utils/startServer'
 dotenv.config()
 ;(async () => {
   await connectDatabase()
-  await startServer()
+  startServer()
 })()
