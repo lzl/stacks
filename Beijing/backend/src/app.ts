@@ -1,11 +1,12 @@
 import express, { Request, Response } from 'express'
 import cors from 'cors'
+import session from 'express-session'
 
 import postRouter from './routes/post'
 import userRouter from './routes/user'
 
 const app = express()
-
+const isProduction = process.env.NODE_ENV === 'production'
 const allowedOrigins = ['http://localhost:3000', 'https://cdpn.io']
 
 // Middlewares
@@ -23,6 +24,19 @@ app.use(
         return callback(new Error(msg), false)
       }
       return callback(null, true)
+    },
+  })
+)
+app.use(
+  session({
+    name: 'sid',
+    secret: 'lzl',
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      maxAge: 1000 * 60 * 60 * 2, // 2 hours
+      sameSite: true,
+      secure: isProduction,
     },
   })
 )
