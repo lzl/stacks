@@ -1,17 +1,41 @@
-{
-  "type": "postgres",
-  "host": "localhost",
-  "port": 5432,
-  "username": "lzl",
-  "password": "lzl",
-  "database": "mydb",
-  "synchronize": true,
-  "entities": ["src/entity/*.ts"],
-  "subscribers": ["src/subscriber/*.ts"],
-  "migrations": ["src/migration/*.ts"],
-  "cli": {
-    "entitiesDir": "src/entity",
-    "migrationsDir": "src/migration",
-    "subscribersDir": "src/subscriber"
+[
+  {
+    "name": "dev",
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "lzl",
+    "password": "lzl",
+    "database": "mydb",
+    "synchronize": true,
+    "logging": true,
+    "entities": ["src/entity/*.ts"],
+    "subscribers": ["src/subscriber/*.ts"],
+    "migrations": ["src/migration/*.ts"],
+    "cli": {
+      "entitiesDir": "src/entity",
+      "migrationsDir": "src/migration",
+      "subscribersDir": "src/subscriber"
+    }
+  },
+  {
+    "name": "test",
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "lzl",
+    "password": "lzl",
+    "database": "mydb-test",
+    "synchronize": true,
+    "logging": false,
+    "dropSchema": true,
+    "entities": ["src/entity/*.ts"],
+    "subscribers": ["src/subscriber/*.ts"],
+    "migrations": ["src/migration/*.ts"],
+    "cli": {
+      "entitiesDir": "src/entity",
+      "migrationsDir": "src/migration",
+      "subscribersDir": "src/subscriber"
+    }
   }
-}
+]
