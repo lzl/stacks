@@ -4,16 +4,16 @@ import { useMachine } from '@xstate/react'
 
 import Layout from '../components/Layout'
 import Toggle from '../components/Toggle'
-import { toggleMachine } from '../machines/toggleMachine'
+import { toggleMachine } from '../machines/toggle'
 
 const IndexPage: NextPage = () => {
-  const [toggleCurrent, toggleSend] = useMachine(toggleMachine)
+  const [current, send] = useMachine(toggleMachine)
 
   return (
     <Layout title="Next.js + XState">
       <Toggle
-        onToggle={() => toggleSend('TOGGLE')}
-        active={toggleCurrent.matches('active')}
+        onToggle={() => send('TOGGLE')}
+        active={current.matches('active')}
       />
     </Layout>
   )

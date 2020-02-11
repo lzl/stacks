@@ -1,11 +1,16 @@
 import React from 'react'
 
-const Toggle = ({ onToggle, active }) => {
+type Props = {
+  onToggle(): void
+  active: boolean
+}
+
+const Toggle: React.FunctionComponent<Props> = ({ onToggle, active }) => {
   return (
     <div>
-      <h1>
+      <div>
         Toogle status: <span>{active ? 'On' : 'Off'}</span>
-      </h1>
+      </div>
       <button onClick={onToggle}>Toggle</button>
     </div>
   )
