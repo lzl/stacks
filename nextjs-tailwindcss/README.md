@@ -9,7 +9,7 @@ This is an starter kit of using [Tailwind CSS](https://tailwindcss.com) in a [Ne
 Download the example:
 
 ```bash
-curl https://codeload.github.com/lzl/stacks/tar.gz/master | tar -xz --strip=2 stacks/nextjs-tailwindcss
+curl https://codeload.github.com/lzl/stacks/tar.gz/master | tar -xz --strip=1 stacks-master/nextjs-tailwindcss
 cd nextjs-tailwindcss
 ```
 
